@@ -1,0 +1,16 @@
+{
+  "name": "avatar-frontend",
+  "authors": [
+    "Denner Evaldt Machado <dnrevaldt@gmail.com>"
+  ],
+  "description": "avatar facebook",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.7",
+    "Materialize": "materialize#^0.97.6",
+    "angular-facebook": "^0.2.3"
+  }
+}

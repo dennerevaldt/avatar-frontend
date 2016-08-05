@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Meu candidato  - Crie agora o avatar</title>
+
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body ng-app="app.candidate" ng-cloak>
+	<div ng-controller="CreateController as vm">	
+		<div class="row">
+			<div class="col s12 m12 center m-tp-index">
+				<img class="img-responsive center user-img" ng-src="{{vm.profile.url ? vm.profile.url : 'https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png' }}" />
+				<img class="img-responsive center user-img" ng-src="{{vm.imgReturn}}" />
+				<br>
+				<a class="waves-effect waves-light btn-large" ng-click="vm.loginFacebook()" ng-if="!vm.profile.url">
+					<i class="material-icons right">public</i>
+					FACEBOOK LOGIN
+				</a>
+				<a class="waves-effect waves-light btn-large" ng-click="vm.generateAvatar()" ng-if="vm.profile.url && !vm.imgReturn">
+					<i class="material-icons right">portrait</i>
+					GERAR AVATAR
+				</a>
+				
+				<a class="waves-effect waves-light btn-large red" ng-click="vm.resetAvatar()" ng-if="vm.imgReturn">
+					<i class="material-icons right">clear</i>
+					LIMPAR
+				</a>
+				<a class="waves-effect waves-light btn-large" ng-click="vm.downloadAvatar()" ng-if="vm.imgReturn">
+					<i class="material-icons right">file_download</i>
+					DOWNLOAD AVATAR
+				</a>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col s12 m6 offset-m3 justify">
+				<div class="progress" ng-show="vm.loading">
+					<div class="indeterminate"></div>
+				</div>
+				<p>
+					Faça login com sua conta do facebook agora e gere o avatar do seu candidato com a foto que está em seu perfil, depois é só atualiza-lá e está pronto! Ajude seu candidato pelas redes sociais.
+				</p>
+			</div>
+		</div>
+
+	</div>
+
+	<!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+    <!-- Angular -->
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <!-- Libs -->
+    <script type="text/javascript" src="bower_components/angular-facebook/lib/angular-facebook.js"></script>
+    <!-- App -->
+    <script type="text/javascript" src="app/app.module.js"></script>
+    <script type="text/javascript" src="app/app.config.js"></script>
+    <script type="text/javascript" src="app/avatar/create.controller.js"></script>
+    <script type="text/javascript" src="app/avatar/avatar.service.js"></script>
+</body>
+</html>

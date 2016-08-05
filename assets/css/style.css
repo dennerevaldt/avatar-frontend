@@ -1,0 +1,19 @@
+body {
+	background-color: #ddd;
+}
+.row {
+	margin-bottom: 0;
+}
+
+.m-tp-index {
+	margin-top: 12%;
+}
+
+.justify {
+	text-align: justify;
+}
+
+.user-img {
+	max-width: 230px;
+	margin-bottom: 10px;
+}
